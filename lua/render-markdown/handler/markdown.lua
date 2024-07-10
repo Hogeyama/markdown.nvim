@@ -55,8 +55,6 @@ M.render_node = function(namespace, buf, capture, node)
         vim.api.nvim_buf_set_extmark(buf, namespace, start_row, start_col, {
             end_row = end_row,
             end_col = end_col,
-            sign_text = list.cycle(heading.signs, level),
-            sign_hl_group = foreground,
         })
     elseif capture == 'dash' then
         local dash = state.config.dash
@@ -97,8 +95,6 @@ M.render_node = function(namespace, buf, capture, node)
         vim.api.nvim_buf_set_extmark(buf, namespace, start_row, start_col, {
             end_row = end_row,
             end_col = end_col,
-            sign_text = icon,
-            sign_hl_group = icon_highlight,
         })
         -- Requires inline extmarks
         if not util.has_10 then
