@@ -284,19 +284,19 @@ end
 ---@param node TSNode
 ---@return boolean
 M.sibling_checkbox = function(buf, node)
-    if not state.config.checkbox.enabled then
-        return false
-    end
-    if ts.sibling(node, { 'task_list_marker_unchecked', 'task_list_marker_checked' }) ~= nil then
-        return true
-    end
-    local paragraph = ts.sibling(node, { 'paragraph' })
-    if paragraph == nil then
-        return false
-    end
-    if component.checkbox(vim.treesitter.get_node_text(paragraph, buf), 'starts') ~= nil then
-        return true
-    end
+    -- if not state.config.checkbox.enabled then
+    --     return false
+    -- end
+    -- if ts.sibling(node, { 'task_list_marker_unchecked', 'task_list_marker_checked' }) ~= nil then
+    --     return true
+    -- end
+    -- local paragraph = ts.sibling(node, { 'paragraph' })
+    -- if paragraph == nil then
+    --     return false
+    -- end
+    -- if component.checkbox(vim.treesitter.get_node_text(paragraph, buf), 'starts') ~= nil then
+    --     return true
+    -- end
     return false
 end
 
